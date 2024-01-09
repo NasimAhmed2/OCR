@@ -8,8 +8,8 @@ def get_kv_map(bucket, key):
     # process using image bytes
     aws_region = 'ap-southeast-2'
     # Set AWS credentials using environment variables
-    os.environ['AWS_ACCESS_KEY_ID'] = 'AKIA2UC3BGWC46O5LKBX'
-    os.environ['AWS_SECRET_ACCESS_KEY'] = 'bQ9nQO2fsCBKGpsu3V4rv/TpqCeEnCvUpt9dc0c/'
+    os.environ['AWS_ACCESS_KEY_ID'] = 'your aws access key'
+    os.environ['AWS_SECRET_ACCESS_KEY'] = 'your aws secret key'
     # Initialize the Textract client
     client = boto3.client('textract', region_name=aws_region)
     response = client.analyze_document(Document={'S3Object': {'Bucket': bucket, "Name": key}}, FeatureTypes=['FORMS','TABLES'])
